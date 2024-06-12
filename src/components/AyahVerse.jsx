@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Header";
 import { get } from "../data/get";
+import Footer from "./Footer";
 
 export default function AyahVerse() {
     let [ayahVerse, setAyahVerses] = useState(null);
@@ -23,6 +24,7 @@ export default function AyahVerse() {
         }, 1000);
         if (formSubmit === false) {
             api('/'+chapterId+'/'+verseId);
+            setInputs({});
         }
     }
 
@@ -35,15 +37,16 @@ export default function AyahVerse() {
     return (
         <>
             <Header />
-            <div className="container mt-5">
+            {/* d-flex flex-column min-vh-100 justify-content-center align-items-center */}
+            <div className="container mt-5 ">
                 <div className="row">
                     <form onSubmit={handleSubmit}>
                         <div className="form-floating mb-3">
-                            <input type="number" className="form-control" id="floatingInput" placeholder="Enter chapter number" name="chapter_number" required onChange={handleChange} />
+                            <input type="number" className="form-control" id="floatingInput" placeholder="Enter chapter number" value={inputs.chapter_number || ''} name="chapter_number" required onChange={handleChange} />
                             <label htmlFor="floatingInput">Chapter Number</label>
                         </div>
                         <div className="form-floating">
-                            <input type="number" className="form-control" id="floatingPassword" placeholder="Enter verse number" name="verse_number" required  onChange={handleChange}/>
+                            <input type="number" className="form-control" id="floatingPassword" placeholder="Enter verse number" value={inputs.verse_number || ''} name="verse_number" required  onChange={handleChange}/>
                             <label htmlFor="floatingPassword">Verse Number</label>
                         </div>
                         <div className="d-grid gap-2 col-6 mx-auto text-center mt-4">
@@ -71,6 +74,7 @@ export default function AyahVerse() {
                     </div></div>)}
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

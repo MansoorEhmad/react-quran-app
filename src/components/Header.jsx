@@ -12,20 +12,12 @@ function Header() {
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to={"/"}>Home</Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link active" to={"/photos"}>Photos</Link>
-                        </li> */}
-                        <li className="nav-item dropdown">
-                            <a className="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Al Quran
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to={"/ayah-verse"}>Ayah/Verse</Link></li>
-                                <li><Link className="dropdown-item" to={"/range-verse"}>Range Verses</Link></li>
-                                <li><Link className="dropdown-item" to={"/all-chapter"}>All Chapter</Link></li>
-                                <li><Link className="dropdown-item" to={"/word-in-quran"}>Word In Quran</Link></li>
-                            </ul>
+                        <li>
+                            <Link className="nav-link active" to={"/ayah-verse"}>Ayah/Verse</Link>
                         </li>
+                        <li><Link className="nav-link active" to={"/range-verse"}>Range Verses</Link></li>
+                        <li><Link className="nav-link active" to={"/all-chapter"}>All Chapter</Link></li>
+                        <li><Link className="nav-link active" to={"/word-in-quran"}>Word In Quran</Link></li>
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
